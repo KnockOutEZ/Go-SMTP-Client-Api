@@ -70,3 +70,10 @@ func sendEmail(emaildata EmailData, from string, to []string, msg []byte) bool {
 	// return true on success
 	return true
 }
+
+
+func GetFormat(w http.ResponseWriter, r *http.Request){
+	fmt.Fprintf(w, "Hello from my SMTP client\n")
+	fmt.Fprintf(w, "Make a post request to /sendmail\n")
+	fmt.Fprintf(w, `Example Object: {"EmailTo": "Reciever Email Address", "EmailFrom": "Your Email Address", "EmailSub":"Email Subject","EmailBody":"Email Body","AppPassword":"Your Email password.For gmail generate and provide app password","Host":"Your SMTP server host (for gmail its 'smtp.gmail.com' )","Port":"SMTP server port (for gmail its 587)"}`)
+}

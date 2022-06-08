@@ -23,6 +23,7 @@ func main() {
 	r := mux.NewRouter()
 	p := os.Getenv("PORT")
 
+	r.HandleFunc("/", han.GetFormat).Methods("GET")
 	r.HandleFunc("/sendmail", han.SendMail).Methods("POST")
 
 	fmt.Println("Server is running on port: ", strings.Split(":"+p, ":")[1])
